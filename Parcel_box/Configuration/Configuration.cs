@@ -7,13 +7,13 @@ namespace ParcelBox.Configurations
 {
     public class Configuration
     {
-        public List<T> readFromJSON<T>(string path)
+        public List<T> ReadFromJSON<T>(string path)
         {
             string text = File.ReadAllText(path);
             return JsonConvert.DeserializeObject<List<T>>(text);
         }
 
-        public int writeToJSON<T>(List<T> list)
+        public int WriteToJSON<T>(List<T> list)
         {
             var jsonList = JsonConvert.SerializeObject(list);
             File.WriteAllText(@"./log.json", jsonList);

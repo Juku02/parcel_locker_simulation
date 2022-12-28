@@ -72,17 +72,19 @@
     <Compile Include="Entities\Parcels\Parcel.cs" />
     <Compile Include="Entities\Humans\IHuman.cs" />
     <Compile Include="Entities\Humans\Human.cs" />
-    <Compile Include="Entities\MailBoxs\IMailBox.cs" />
+    <Compile Include="Entities\MailBoxes\IMailBox.cs" />
     <Compile Include="Configuration\Configuration.cs" />
-    <Compile Include="Entities\MailBoxs\MailBox.cs" />
+    <Compile Include="Entities\MailBoxes\MailBox.cs" />
     <Compile Include="Tests\TestJSON.cs" />
+    <Compile Include="SchedulersAndHandlers\IScheduler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\Parcels\" />
     <Folder Include="Entities\Humans\" />
-    <Folder Include="Entities\MailBoxs\" />
+    <Folder Include="Entities\MailBoxes\" />
     <Folder Include="Configuration\" />
     <Folder Include="Tests\" />
+    <Folder Include="SchedulersAndHandlers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

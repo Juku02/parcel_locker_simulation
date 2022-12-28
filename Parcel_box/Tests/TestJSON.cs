@@ -9,19 +9,22 @@ namespace Tests.Test
     {
         public void Test()
         {
-            List<Parcel> parcelList = new List<Parcel>();
+            List<Parcel> inParcelList = new List<Parcel>();
 
             Configuration conf = new Configuration();
 
-            List<Parcel> parcelData = conf.readFromJSON<Parcel>(@"./parcel.json");
+            List<Parcel> parcelList = conf.ReadFromJSON<Parcel>(@"./parcel.json");
 
-            Console.WriteLine($"Adressee: {parcelData[0].Adressee}");
-            Console.WriteLine($"Sender: {parcelData[0].Sender}");
-            Console.WriteLine($"Status: {parcelData[0].Status}");
+            foreach (Parcel parcel in parcelList)
+            {
+                Console.WriteLine($"Adressee: {parcel.Adressee}");
+                Console.WriteLine($"Sender: {parcel.Sender}");
+                Console.WriteLine($"Status: {parcel.Status}");
+            }
 
             for (int i = 0; i < 3; i++)
             {
-                parcelList.Add(new Parcel()
+                inParcelList.Add(new Parcel()
                 {
                     Adressee = "dupa" + i,
                     Sender = "pizda" + i,
@@ -29,7 +32,7 @@ namespace Tests.Test
                 });
             }
 
-            int result = conf.writeToJSON<Parcel>(parcelList);
+            int result = conf.WriteToJSON<Parcel>(inParcelList);
         }
     }
 }
