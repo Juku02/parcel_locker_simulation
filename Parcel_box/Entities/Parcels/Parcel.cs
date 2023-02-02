@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using ParcelBox.Entities.Humans;
 namespace ParcelBox.Entities.Parcels
 {
 
     public class Parcel : IParcel
     {
-        public string Adressee  { get; set; }
-        public string Sender { get; set; }
-        public ParcelStatus Status { get; set; }
-
-    }
-
-    public enum ParcelStatus
-    {
-        PREPARING,
-        SENDING,
-        DELIVERED,
+        public Human Adressee { get; set; }
+        public Human Sender { get; set; }
     }
 }

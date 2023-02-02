@@ -1,11 +1,10 @@
 ﻿using System;
-
+using ParcelBox.Entities.Humans;
 namespace ParcelBox.Entities.Parcels
 {
     interface IParcel 
     {
-        string Adressee { get; set; }
-        string Sender { get; set; }
-        ParcelStatus Status { get; set; }
+        Human Adressee { get; set; }
+        Human Sender { get; set; }
     }
 }

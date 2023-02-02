@@ -59,10 +59,36 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Json">
-      <HintPath>..\packages\System.Text.Json.7.0.0\lib\net462\System.Text.Json.dll</HintPath>
+      <HintPath>..\packages\System.Text.Json.7.0.1\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="CairoSharp">
+      <HintPath>..\packages\CairoSharp.3.24.24.38\lib\netstandard2.0\CairoSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GLibSharp">
+      <HintPath>..\packages\GLibSharp.3.24.24.38\lib\netstandard3.0\GLibSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AtkSharp">
+      <HintPath>..\packages\AtkSharp.3.24.24.38\lib\netstandard3.0\AtkSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GioSharp">
+      <HintPath>..\packages\GioSharp.3.24.24.38\lib\netstandard3.0\GioSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PangoSharp">
+      <HintPath>..\packages\PangoSharp.3.24.24.38\lib\netstandard3.0\PangoSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GdkSharp">
+      <HintPath>..\packages\GdkSharp.3.24.24.38\lib\netstandard3.0\GdkSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GtkSharp">
+      <HintPath>..\packages\GtkSharp.3.24.24.38\lib\netstandard3.0\GtkSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +103,10 @@
     <Compile Include="Entities\MailBoxes\MailBox.cs" />
     <Compile Include="Tests\TestJSON.cs" />
     <Compile Include="SchedulersAndHandlers\IScheduler.cs" />
+    <Compile Include="SchedulersAndHandlers\Scheduler.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="Tests\TestThread.cs" />
+    <Compile Include="Tests\TestSimpleParcelBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\Parcels\" />
@@ -89,6 +119,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
@@ -99,4 +134,5 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <Import Project="..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets" Condition="Exists('..\packages\GtkSharp.3.24.24.38\build\GtkSharp.targets')" />
 </Project>
